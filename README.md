@@ -18,4 +18,4 @@
 
 
 hillBomber Wireframe
-![](https://imgur.com/a/VJuSAYC)
+![image1](https://user-images.githubusercontent.com/48702365/66228726-c9bb5300-e6a5-11e9-859d-54ee72c1a74c.jpeg)
