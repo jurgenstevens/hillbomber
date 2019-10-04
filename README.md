@@ -17,5 +17,5 @@
 8) If the player reaches the 20th intersection, switch to a gif of a hillbomb make and float the words "You Win" across the screen in gold letters.
 
 
-
-Hillbomber Wireframe URL: https://wireframe.cc/pro/pp/b07661930279003
+hillBomber Wireframe
+![alt text](https://imgur.com/a/VJuSAYC "Hillbomber")
