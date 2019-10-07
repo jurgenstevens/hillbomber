@@ -3,17 +3,50 @@ body {
 	color: black;
 }
 
-#street {
-	color: gray;
-	font-family: 'Roboto', sans-serif;
-	font-size: 2900px;
+#streetns {
+	background-color: gray;
 	position: absolute;
+	width: 350px;
+	height: 900px;
+	left: 540px;
+	top: 200px;
+	/*	font-family: 'Roboto', sans-serif;
+	font-size: 2900px;*/
+}
+#streetew {
+	background-color: gray;
+	position: absolute;
+	width: 1420px;
+	height: 200px;
+	top: 200px;
+}
+#houseseast {
+	position: absolute;
+	top: 440px;
+	left: 290px;
+}
+#houseswest {
+	position: absolute;
+	top: 440px;
+	left: 930px;
 }
 
 /*Buttons are within controls div*/
-#controls {
+.controls {
 	position: fixed;
 }
+.title {
+	position: fixed;
+}
+#timer {
+	position: fixed;
+	top: 60px;
+}
+#score {
+	position: fixed;
+	top: 95px;
+}
+
 .buttons {
 	position: fixed;
 	top: 645px;
@@ -40,7 +73,7 @@ body {
 #right {
 	position: fixed;
 	bottom: 65px;
-	right: 665px;
+	left: 705px;
 }
 
 #speed {
