@@ -1,16 +1,36 @@
-body{
-	background-color: #efdfbb;
+body {
+	background-color: white;
 	color: black;
 }
 
-#skater{
-
+/*Buttons are within controls div*/
+#controls {
+	position: fixed;
 }
-
 .buttons {
 	position: absolute;
-	bottom: 25px;
-	left: 560px;
+	top: 645px;
+	left: 665px;
+}
+
+
+#street {
+	color: gray;
+	font-family: 'Roboto', sans-serif;
+	font-size: 2500px;
+	position: absolute;
+	top: 25px;
+	right: 25;
+}
+
+.skateboard {
+	border-radius: 50%;
+	position: fixed;
+	background-color: black;
+	height: 70px;
+	width: 25px;
+	bottom: 100px;
+	left: 700px;
 }
 
 #left {
@@ -26,24 +46,29 @@ body{
 }
 
 #speed {
-	position: absolute;
+	position: fixed;
 	right: 10px;
 	top: 50px;
 }
 
 #wobble {
-	position: absolute;
+	position: fixed;
 	right: 10px;
 	top: 85px;
 }
 
 .speed {
-	position: absolute;
+	position: fixed;
 	right: 80px;
 	top: 70px;
 }
 
 .wobble {
+	position: fixed;
 	right: 150px;
-	top: 75px;
+	top: 105px;
 }
+
+
+
+
