@@ -3,25 +3,23 @@ body {
 	color: black;
 }
 
+#street {
+	color: gray;
+	font-family: 'Roboto', sans-serif;
+	font-size: 2900px;
+	position: absolute;
+}
+
 /*Buttons are within controls div*/
 #controls {
 	position: fixed;
 }
 .buttons {
-	position: absolute;
+	position: fixed;
 	top: 645px;
 	left: 665px;
 }
 
-
-#street {
-	color: gray;
-	font-family: 'Roboto', sans-serif;
-	font-size: 2500px;
-	position: absolute;
-	top: 25px;
-	right: 25;
-}
 
 .skateboard {
 	border-radius: 50%;
@@ -34,15 +32,15 @@ body {
 }
 
 #left {
-	position: absolute;
-	bottom: 35px;
-	right: 55px;
+	position: fixed;
+	bottom: 65px;
+	left: 655px;
 }
 
 #right {
-	position: absolute;
-	bottom: 35px;
-	left: 45px;
+	position: fixed;
+	bottom: 65px;
+	right: 665px;
 }
 
 #speed {
