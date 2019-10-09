@@ -9,7 +9,7 @@ console.log('This is Hillbomber');
 // }
 
 
-// This 
+
 const canvas = document.getElementById('my-canvas');
 const ctx = canvas.getContext('2d');
 
@@ -97,12 +97,36 @@ const skateboard = {
 }
 
 const obstacleCar = {
-	x: (Math.random() * 300),
+	x: (Math.random() * 250),
 	y: 0,
 	width: 50,
 	height: 100,
 	color: "red",
 	speed: 10,
+	draw() {
+		ctx.beginPath();
+		ctx.fillStyle = this.color;
+	    ctx.rect(this.x, this.y, this.width, this.height);
+	    ctx.fill();   
+	    
+	},
+	move() {
+
+		this.y += this.speed;
+    	if(this.y === 1000){
+    		this.y = 0
+    		this.x = (Math.random() * 250);
+    	}
+  	}
+}
+
+const obstacleDog = {
+	x: (Math.random() * 250),
+	y: 0,
+	width: 50,
+	height: 50,
+	color: "black",
+	speed: 5,
 	draw() {
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
@@ -132,6 +156,8 @@ function animate() {
 
 	// console.log(++x);
 	clearCanvas(); // prevents trailers
+	obstacleDog.draw();
+	obstacleDog.move();
 	obstacleCar.draw();
 	obstacleCar.move();
 	skateboard.move();
@@ -140,7 +166,12 @@ function animate() {
 	if(skateboard.checkCollision(obstacleCar)){
 		gameOver();
 		return;
-	} else {
+	} 
+	if(skateboard.checkCollision(obstacleDog)){
+		gameOver();
+		return;
+	}
+	else {
 	// recursion - you are creating a situation where the function calls itself
 		requestID = window.requestAnimationFrame(animate)
 	}
