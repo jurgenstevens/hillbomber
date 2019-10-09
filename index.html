@@ -4,7 +4,7 @@
 	<title>HILLBOMBER!</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="SF">
@@ -22,8 +22,8 @@
 		<h1 class="title">HILLBOMBER!</h1>
 		<h3 id="timer">Timer:</h3>
 		<h3 id="score">Score:</h3>
-		<h3 id="speed">:Speed</h3>
-		<h3 id="wobble">:Speed Wobble</h3>
+<!-- 		<h3 id="speed">:Speed</h3>
+		<h3 id="wobble">:Speed Wobble</h3> -->
 		<div class="buttons">
 	<!-- 		<button id="left">LEFT</button>
 			<button id="right">RIGHT</button>
@@ -38,10 +38,18 @@
 	</canvas> -->
 	<div class="car"></div>
 	<div class="dog"></div>
-		<progress class="speed" value="0" max="100">
+<!-- 		<progress class="speed" value="0" max="100">
 		</progress>
 		<progress class="wobble" value="50" max="100">
-		</progress>
+		</progress> -->
+
+	<div id="myModal" class="modal">
+	<div class="modal-content">
+	<div id="gameOver">Game Over</div>
+    <span class="close">&times;</span>
+  	</div>
+
+</div>
 	<script src="js/app.js"></script>
 </body>
 </html>

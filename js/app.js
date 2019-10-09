@@ -148,10 +148,12 @@ function animate() {
 animate();
 
 function gameOver(){
-	document.write(`
-    <video src="https://giant.gfycat.com/GraciousValuableFairybluebird.mp4">
-    Your Browser Does Not Support This Video</video>
-  `)
+	const modal = document.getElementById("myModal");
+	const span = document.getElementsByClassName("close")[0];
+	modal.style.display = "block";
+	// document.write(`
+ //    <img src="https://images.wave.fr/images//gx1000-roll-up-skate-wave-video.gif">
+ //  `)
 }
 
 
