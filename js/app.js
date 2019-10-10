@@ -22,18 +22,16 @@ const hillBomber = {
 		this.startCanvas();
 	},
 
+	// starts the timer and also allows the score to go up in adjustable increments
 	startTimer() {
 		const intervalId = setInterval(() => {
 			this.time++
 			this.score += .9;
 			this.printStats();
 			if (this.score >= 10){
-				console.log('Game won');
 				clearInterval(intervalId);
-				console.log('Interval ID cleared');
 				this.gameWon();
 				clearCanvas();
-				console.log('Canvas cleared..?');
 			} 
 			if (skateboard.checkCollision(obstacleCar)){
 				this.gameOver();
@@ -51,7 +49,6 @@ const hillBomber = {
 				clearCanvas();
 			}
 		}, 1000);
-		// this.time = intervalId;
 	},
 
 
@@ -70,7 +67,6 @@ const hillBomber = {
 		
 
 	gameWon() {
-		// console.log('Game Won!');
 		const modal = document.getElementById("myModalWin");
 		const span = document.getElementsByClassName("close")[0];
 		modal.style.display = "block";
@@ -84,12 +80,11 @@ const hillBomber = {
 };
 
 
-
-
 // THE ACTUAL CANVAS
 const canvas = document.getElementById('my-canvas');
 const ctx = canvas.getContext('2d');
 
+// will clear the trail left by the objects within the canvas after moving
 function clearCanvas() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
@@ -158,17 +153,18 @@ const skateboard = {
 			}	
 		}
 	},
+
+	// let's the game know if the main object touches any incoming obstacle, the game is over
 	checkCollision(thing) {
 		if(this.x + this.width > thing.x &&
 	      this.x < thing.x + thing.width &&
 	      thing.y < this.y + this.height && 
 	      thing.y + thing.height > this.y
 		)
-		{
-			console.log("Wipeout!");
+		{	
 			return true
-		}
-		else return false
+		} else 
+			return false
 	}
 }
 
@@ -177,8 +173,8 @@ const skateboard = {
 const obstacleCar = {
 	x: (Math.random() * 250),
 	y: 0,
-	width: 50,
-	height: 100,
+	width: 60,
+	height: 120,
 	color: "red",
 	speed: 10,
 	draw() {
@@ -200,8 +196,8 @@ const obstacleCar = {
 const obstacleDog = {
 	x: (Math.random() * 300),
 	y: 0,
-	width: 50,
-	height: 50,
+	width: 60,
+	height: 60,
 	color: "black",
 	speed: 5,
 	draw() {
@@ -223,8 +219,8 @@ const obstacleDog = {
 const obstaclePotHole = {
 	x: (Math.random() * 300),
 	y: 0,
-	width: 40,
-	height: 40,
+	width: 50,
+	height: 50,
 	color: "brown",
 	speed: 5,
 	draw() {
@@ -260,7 +256,6 @@ const streetLane = {
 	   }
 	},
 	move() {
-
 		this.y += this.speed;
     	if(this.y === 1000){
     		this.y = 0
@@ -277,11 +272,9 @@ let animationRunning = false;
 let x = 0;
 
 function animate() { 
-	
 	animationRunning = true
 
-	// console.log(++x);
-	clearCanvas(); // prevents trailers
+	clearCanvas(); // prevents trailers for the following objects
 	obstaclePotHole.draw();
 	obstaclePotHole.move();
 	streetLane.draw();
@@ -293,19 +286,9 @@ function animate() {
 	skateboard.move();
 	skateboard.draw();
 
-
-	// if(hillBomber.score >= 10){
-	// 	// let requestID = false;
-	// 	animationRunning = null;
-	// 	x = null;
-	// 	clearCanvas();
-	// 	hillBomber.gameWon();
-	// 	// clearCanvas();
-	// 	// let requestID = false;
-	// 	// let x = null;
-	// 	// let animationRunning = false;
-	// }
 	// USE THIS FOR FUTURE REFERENCE
+	// causes the animation to stop whether the skateboarder collided with an obstacle or has reached the goal of x amount
+	// of points on the score
 	if(skateboard.checkCollision(obstacleCar) || skateboard.checkCollision(obstacleDog) || skateboard.checkCollision(obstaclePotHole)){
 		hillBomber.gameOver();
 		clearCanvas();
@@ -317,13 +300,12 @@ function animate() {
 	// recursion - you are creating a situation where the function calls itself
 		requestID = window.requestAnimationFrame(animate)
 	}
-
 }
 
 
 // Listeners
 
-// start game
+// starts the game
 $('#startButton').on('click', () => {
 	// hide the start section
 	$('.startSection').hide();
@@ -334,16 +316,15 @@ $('#startButton').on('click', () => {
 	// and show the actual game play	
 })
 
+// allows the w, a, s, d keys to be the way to move the skateboarder
 document.addEventListener('keyup', (e) => {
 	// for skateboard
 	if(["w", "a", "s", "d"].includes(e.key)){
 		skateboard.unsetDirection(e.key)
 	}
 });
-
 document.addEventListener('keydown', (e) => {
 	skateboard.setDirection(e.key)
-	
 });
 
 
