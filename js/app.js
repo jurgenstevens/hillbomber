@@ -28,8 +28,12 @@ const hillBomber = {
 			this.score += .9;
 			this.printStats();
 			if (this.score >= 10){
-				this.gameWon();
+				console.log('Game won');
 				clearInterval(intervalId);
+				console.log('Interval ID cleared');
+				this.gameWon();
+				clearCanvas();
+				console.log('Canvas cleared..?');
 			} 
 			if (skateboard.checkCollision(obstacleCar)){
 				this.gameOver();
@@ -66,11 +70,10 @@ const hillBomber = {
 		
 
 	gameWon() {
-		console.log('Game Won!');
+		// console.log('Game Won!');
 		const modal = document.getElementById("myModalWin");
 		const span = document.getElementsByClassName("close")[0];
 		modal.style.display = "block";
-		clearCanvas();
 	},
 
 	gameOver() {
@@ -139,7 +142,7 @@ const skateboard = {
 		if(this.direction.left) {
 			this.x -= this.speed;
 			if(this.x + this.width <= this.width){
-				this.x += 3
+				this.x += 10
 			}
 		}
 		if(this.direction.down) {
@@ -289,26 +292,32 @@ function animate() {
 	obstacleCar.move();
 	skateboard.move();
 	skateboard.draw();
-	
-	if(skateboard.checkCollision(obstacleCar)){
+
+
+	// if(hillBomber.score >= 10){
+	// 	// let requestID = false;
+	// 	animationRunning = null;
+	// 	x = null;
+	// 	clearCanvas();
+	// 	hillBomber.gameWon();
+	// 	// clearCanvas();
+	// 	// let requestID = false;
+	// 	// let x = null;
+	// 	// let animationRunning = false;
+	// }
+	// USE THIS FOR FUTURE REFERENCE
+	if(skateboard.checkCollision(obstacleCar) || skateboard.checkCollision(obstacleDog) || skateboard.checkCollision(obstaclePotHole)){
 		hillBomber.gameOver();
 		clearCanvas();
 		return;
-	} 
-	if(skateboard.checkCollision(obstacleDog)){
-		hillBomber.gameOver();
+	} else if (hillBomber.score >= 10) {
 		clearCanvas();
-		return;
-	}
-	if(skateboard.checkCollision(obstaclePotHole)){
-		hillBomber.gameOver();
-		clearCanvas();
-		return;
-	} 
-	else {
+		hillBomber.gameWon();
+	} else {
 	// recursion - you are creating a situation where the function calls itself
 		requestID = window.requestAnimationFrame(animate)
 	}
+
 }
 
 
