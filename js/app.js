@@ -9,6 +9,33 @@ console.log('This is Hillbomber');
 // }
 
 
+// const hillBomber = {
+
+//time: 0
+
+//startTimer() {
+// const hillBomberTimer = setInterval(() => {
+//	this.time++
+// 	this.printStats();
+//	if (this.score >= 10){
+//		$('#score').attr()
+//	}
+// }, 1000);
+//},
+
+
+// function gameOver(){
+// 	const modal = document.getElementById("myModal");
+// 	const span = document.getElementsByClassName("close")[0];
+// 	modal.style.display = "block";
+// }
+
+// printStats() {
+// 		const $timer = $('#timer');
+// 		const $score = $('#score');
+// 		$timer.text(`TIMER: ${this.time}s`)
+// 		$score.text(`AGE: ${Math.floor(this.score)}`)
+// 	},
 
 const canvas = document.getElementById('my-canvas');
 const ctx = canvas.getContext('2d');
@@ -25,7 +52,7 @@ const skateboard = {
 	height: 70,
 	width: 25,
 	color: "black",
-	speed: 2,
+	speed: 3,
 
 	direction: {
 		up: false,
@@ -38,8 +65,7 @@ const skateboard = {
 		ctx.beginPath()
 		ctx.rect(this.x, this.y, this.width, this.height)
 		ctx.fillStyle = this.color;
-		ctx.fill();
-		
+		ctx.fill();	
 	},
 
 	setDirection(key) {
@@ -121,28 +147,54 @@ const obstacleCar = {
 }
 
 const obstacleDog = {
-	x: (Math.random() * 250),
+	x: (Math.random() * 300),
 	y: 0,
 	width: 50,
 	height: 50,
 	color: "black",
-	speed: 5,
+	speed: 8,
 	draw() {
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
 	    ctx.rect(this.x, this.y, this.width, this.height);
-	    ctx.fill();   
-	    
+	    ctx.fill();
 	},
 	move() {
 
 		this.y += this.speed;
     	if(this.y === 1000){
     		this.y = 0
-    		this.x = (Math.random() * 250);
+    		this.x = (Math.random() * 300);
     	}
   	}
 }
+
+const streetLane = {
+	x: 165,
+	y: 0,
+	width: 20,
+	height: 100,
+	color: "white",
+	speed: 10,
+
+	draw() {
+		for(let i = 0; i <= canvas.height; i += 50){
+		ctx.beginPath();
+		ctx.fillStyle = this.color;
+	    ctx.rect(this.x, this.y, this.width, this.height);
+	    ctx.fill();   
+	   }
+	},
+	move() {
+
+		this.y += (this.speed * 5);
+    	if(this.y === 1000){
+    		this.y = 0
+    		this.x = 155;
+    	}
+  	}
+}
+//}
 
 
 // CREATE ANIMATIONS
@@ -156,6 +208,8 @@ function animate() {
 
 	// console.log(++x);
 	clearCanvas(); // prevents trailers
+	streetLane.draw();
+	streetLane.move();
 	obstacleDog.draw();
 	obstacleDog.move();
 	obstacleCar.draw();
@@ -182,36 +236,43 @@ function gameOver(){
 	const modal = document.getElementById("myModal");
 	const span = document.getElementsByClassName("close")[0];
 	modal.style.display = "block";
-	// document.write(`
- //    <img src="https://images.wave.fr/images//gx1000-roll-up-skate-wave-video.gif">
- //  `)
 }
 
 
 
-// const hillbomberGame = {
-
-// 	hillBomber: null,
-// 	time: 0,
-
-
-// 	makeHillbomber(){
-
-// 	},
-//}
-
 // Listeners
+
+//start game
+// $('.#startButton').on('click', () => {
+	// hide the start section
+	// $('.startSection').hide();
+	// invoke the start timer function
+
+	// everything that isnt in the startSection section, should
+	// be hidden until the start button has been clicked
+
+	// and show the actual game play	
+// })
+
 
 document.addEventListener('keyup', (e) => {
 	// for skateboard
 	if(["w", "a", "s", "d"].includes(e.key)){
-		
 		skateboard.unsetDirection(e.key)
 	}
-})
+});
 
 document.addEventListener('keydown', (e) => {
 	
 	skateboard.setDirection(e.key)
 	
-})
+});
+
+
+
+
+
+
+
+
+

@@ -10,14 +10,56 @@ canvas {
 	top: 200px;
 }
 
-#streetns {
-	/*background-color: gray;
-	position: absolute;
-	width: 350px;
-	height: 900px;
-	left: 540px;
-	top: 200px;*/
+#startModal { 
+	position: fixed;
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%; 
+/*	background-image: url(http://24.media.tumblr.com/36e544b3c915e015d98aa6e207716623/tumblr_n4wnen0SpZ1sgg3dvo1_500.gif);*/
+/*	background-repeat: no-repeat;
+	background-position: center;*/
+	font-family: 'Press Start 2P', cursive;
 }
+#startLogo {
+	text-align: center;
+	margin-top: 60px;
+	font-family: 'Press Start 2P', cursive;
+	color: gold;
+	font-size: 60px;
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: brown;
+}
+
+#startButton {
+	position: absolute;
+	text-align: center;
+	margin-top: 190px;
+	margin-left: 590px;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 50px;
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
+	background-color: Transparent;
+	border: none;
+	cursor: pointer;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: gold;
+}
+
+#instructions {
+	font-size: 12px;
+	text-align: center;
+	margin-top: 0px;
+	font-family: 'Press Start 2P', cursive;
+	color: red;
+	font-size: 20px;
+/*	-webkit-text-stroke-width: 1px;*/
+/*	-webkit-text-stroke-color: brown;*/
+}
+
 #streetew {
 	background-color: gray;
 	position: absolute;
@@ -57,17 +99,6 @@ canvas {
 	top: 645px;
 	left: 665px;
 }
-
-
-/*.skateboard {
-	border-radius: 50%;
-	position: fixed;
-	background-color: black;
-	height: 70px;
-	width: 25px;
-	bottom: 100px;
-	left: 700px;
-}*/
 
 #left {
 	position: fixed;
@@ -113,7 +144,7 @@ canvas {
   top: 0;
   width: 100%;
   height: 100%; 
-  background-image: url(https://images.wave.fr/images//gx1000-roll-up-skate-wave-video.gif);
+  background-image: url(https://media.giphy.com/media/Vg55MibrgumyavgPTA/giphy.gif);
   background-repeat: no-repeat;
   background-position: center;
   font-family: 'Press Start 2P', cursive;
