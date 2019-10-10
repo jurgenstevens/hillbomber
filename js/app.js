@@ -11,6 +11,7 @@ console.log('This is Hillbomber');
 const hillBomber = {
 
 	time: 0,
+	score: 0,
 
 	// START BUTTON
 	gameStart(){
@@ -26,9 +27,11 @@ const hillBomber = {
 	startTimer() {
 		const hillBomberTimer = setInterval(() => {
 			this.time++
+			this.score += .9;
 			this.printStats();
-			if (this.score >= 50){
+			if (this.score >= 10){
 				this.gameWon();
+				clearInterval(hillBomberTimer);
 			}
 		}, 1000);
 		this.time = hillBomberTimer;
@@ -39,7 +42,7 @@ const hillBomber = {
 		const $timer = $('#timer');
 		const $score = $('#score');
 		$timer.text(`TIMER: ${this.time}s`)
-		// $score.text(`SCORE: ${Math.floor(this.score)}`)
+		$score.text(`SCORE: ${Math.floor(this.score)}`)
 	},
 
 
@@ -52,7 +55,7 @@ const hillBomber = {
 	gameWon() {
 		console.log('Game Won!');
 		const modal = document.getElementById("myModalWin");
-		// const span = document.getElementsByClassName("close")[0];
+		const span = document.getElementsByClassName("close")[0];
 		modal.style.display = "block";
 	},
 
@@ -82,7 +85,7 @@ const skateboard = {
 	height: 70,
 	width: 25,
 	color: "black",
-	speed: 2,
+	speed: 5,
 
 	direction: {
 		up: false,
@@ -146,6 +149,7 @@ const skateboard = {
 		)
 		{
 			console.log("Wipeout!");
+			clearCanvas();
 			return true
 		}
 		else return false
@@ -158,7 +162,7 @@ const obstacleCar = {
 	width: 50,
 	height: 100,
 	color: "red",
-	speed: 1,
+	speed: 10,
 	draw() {
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
@@ -180,7 +184,7 @@ const obstacleDog = {
 	width: 50,
 	height: 50,
 	color: "black",
-	speed: 2,
+	speed: 6,
 	draw() {
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
@@ -250,6 +254,8 @@ function animate() {
 	} 
 	if(skateboard.checkCollision(obstacleDog)){
 		hillBomber.gameOver();
+		clearInterval(hillBomberTimer);
+		clearCanvas();
 		return;
 	}
 	else {
