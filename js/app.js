@@ -18,23 +18,33 @@ const hillBomber = {
 		const modal = document.getElementById("startModal");
 		modal.style.display = "none";
 
-
-
 		this.startTimer();
 		this.startCanvas();
 	},
 
 	startTimer() {
-		const hillBomberTimer = setInterval(() => {
+		const intervalId = setInterval(() => {
 			this.time++
 			this.score += .9;
 			this.printStats();
 			if (this.score >= 10){
 				this.gameWon();
-				clearInterval(hillBomberTimer);
+				clearInterval(intervalId);
+			} 
+			if (skateboard.checkCollision(obstacleCar)){
+				this.gameOver();
+				clearInterval(intervalId);
+			}
+			if (skateboard.checkCollision(obstacleDog)){
+				this.gameOver();
+				clearInterval(intervalId);
+			}
+			if (skateboard.checkCollision(obstaclePotHole)){
+				this.gameOver();
+				clearInterval(intervalId);
 			}
 		}, 1000);
-		this.time = hillBomberTimer;
+		// this.time = intervalId;
 	},
 
 
@@ -53,6 +63,7 @@ const hillBomber = {
 		
 
 	gameWon() {
+		clearCanvas();
 		console.log('Game Won!');
 		const modal = document.getElementById("myModalWin");
 		const span = document.getElementsByClassName("close")[0];
@@ -60,11 +71,12 @@ const hillBomber = {
 	},
 
 	gameOver() {
+		clearCanvas();
 		const modal = document.getElementById("myModalLose");
 		const span = document.getElementsByClassName("close")[0];
 		modal.style.display = "block";
 	}
-}
+};
 
 
 
@@ -149,7 +161,6 @@ const skateboard = {
 		)
 		{
 			console.log("Wipeout!");
-			clearCanvas();
 			return true
 		}
 		else return false
@@ -184,6 +195,28 @@ const obstacleDog = {
 	width: 50,
 	height: 50,
 	color: "black",
+	speed: 5,
+	draw() {
+		ctx.beginPath();
+		ctx.fillStyle = this.color;
+	    ctx.rect(this.x, this.y, this.width, this.height);
+	    ctx.fill();
+	},
+	move() {
+		this.y += this.speed;
+    	if(this.y === 1000){
+    		this.y = 0
+    		this.x = (Math.random() * 300);
+    	}
+  	}
+}
+
+const obstaclePotHole = {
+	x: (Math.random() * 300),
+	y: 0,
+	width: 40,
+	height: 40,
+	color: "brown",
 	speed: 6,
 	draw() {
 		ctx.beginPath();
@@ -239,6 +272,8 @@ function animate() {
 
 	// console.log(++x);
 	clearCanvas(); // prevents trailers
+	obstaclePotHole.draw();
+	obstaclePotHole.move();
 	streetLane.draw();
 	streetLane.move();
 	obstacleDog.draw();
@@ -250,14 +285,19 @@ function animate() {
 	
 	if(skateboard.checkCollision(obstacleCar)){
 		hillBomber.gameOver();
+		clearCanvas();
 		return;
 	} 
 	if(skateboard.checkCollision(obstacleDog)){
 		hillBomber.gameOver();
-		clearInterval(hillBomberTimer);
 		clearCanvas();
 		return;
 	}
+	if(skateboard.checkCollision(obstaclePotHole)){
+		hillBomber.gameOver();
+		clearCanvas();
+		return;
+	} 
 	else {
 	// recursion - you are creating a situation where the function calls itself
 		requestID = window.requestAnimationFrame(animate)
