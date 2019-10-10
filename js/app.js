@@ -92,7 +92,7 @@ const skateboard = {
 		if(this.direction.left) {
 			this.x -= this.speed;
 			if(this.x + this.width <= this.width){
-				this.x += 2
+				this.x += 3
 			}
 		}
 		if(this.direction.down) {
