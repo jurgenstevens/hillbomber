@@ -34,14 +34,17 @@ const hillBomber = {
 			if (skateboard.checkCollision(obstacleCar)){
 				this.gameOver();
 				clearInterval(intervalId);
+				clearCanvas();
 			}
 			if (skateboard.checkCollision(obstacleDog)){
 				this.gameOver();
 				clearInterval(intervalId);
+				clearCanvas();
 			}
 			if (skateboard.checkCollision(obstaclePotHole)){
 				this.gameOver();
 				clearInterval(intervalId);
+				clearCanvas();
 			}
 		}, 1000);
 		// this.time = intervalId;
@@ -63,15 +66,14 @@ const hillBomber = {
 		
 
 	gameWon() {
-		clearCanvas();
 		console.log('Game Won!');
 		const modal = document.getElementById("myModalWin");
 		const span = document.getElementsByClassName("close")[0];
 		modal.style.display = "block";
+		clearCanvas();
 	},
 
 	gameOver() {
-		clearCanvas();
 		const modal = document.getElementById("myModalLose");
 		const span = document.getElementsByClassName("close")[0];
 		modal.style.display = "block";
@@ -81,7 +83,7 @@ const hillBomber = {
 
 
 
-
+// THE ACTUAL CANVAS
 const canvas = document.getElementById('my-canvas');
 const ctx = canvas.getContext('2d');
 
@@ -90,7 +92,7 @@ function clearCanvas() {
 }
 
 
-
+// SKATEBOARD WITHIN THE CANVAS
 const skateboard = {
 	x: 175,
 	y: 800,
@@ -167,6 +169,8 @@ const skateboard = {
 	}
 }
 
+
+// CAR WITHIN THE CANVAS
 const obstacleCar = {
 	x: (Math.random() * 250),
 	y: 0,
@@ -189,6 +193,7 @@ const obstacleCar = {
   	}
 }
 
+// DOG WITHIN THE CANVAS
 const obstacleDog = {
 	x: (Math.random() * 300),
 	y: 0,
@@ -211,13 +216,14 @@ const obstacleDog = {
   	}
 }
 
+// POTHOLE WITHIN THE CANVAS
 const obstaclePotHole = {
 	x: (Math.random() * 300),
 	y: 0,
 	width: 40,
 	height: 40,
 	color: "brown",
-	speed: 6,
+	speed: 5,
 	draw() {
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
@@ -233,6 +239,7 @@ const obstaclePotHole = {
   	}
 }
 
+// STREET LANE WITHIN THE CANVAS
 const streetLane = {
 	x: 165,
 	y: 0,
@@ -303,22 +310,6 @@ function animate() {
 		requestID = window.requestAnimationFrame(animate)
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Listeners
