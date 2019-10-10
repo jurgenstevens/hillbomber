@@ -88,10 +88,16 @@ canvas {
 #timer {
 	position: fixed;
 	top: 60px;
+	font-family: 'Press Start 2P', cursive;
+	color: black;
+	font-size: 25px;
 }
 #score {
 	position: fixed;
-	top: 95px;
+	top: 155px;
+	font-family: 'Press Start 2P', cursive;
+	color: black;
+	font-size: 25px;
 }
 
 .buttons {
