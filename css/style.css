@@ -136,7 +136,7 @@ canvas {
 	top: 105px;
 }
 
-.modal {
+.modalLose {
   display: none; 
   position: fixed;
   z-index: 1; 

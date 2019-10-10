@@ -1,72 +1,3 @@
-console.log('This is Hillbomber');
-
-
-// show the start button page
-// meanwhile the actual game is hidden
-
-// START BUTTON
-
-
-
-const hillBomber = {
-
-	time: 0,
-
-	// START BUTTON
-	gameStart(){
-		const modal = document.getElementById("startModal");
-		modal.style.display = "none";
-
-
-
-		this.startTimer();
-		this.startCanvas();
-	},
-
-	startTimer() {
-		const hillBomberTimer = setInterval(() => {
-			this.time++
-			this.printStats();
-			if (this.score >= 50){
-				this.gameWon();
-			}
-		}, 1000);
-		this.time = hillBomberTimer;
-	},
-
-
-	printStats() {
-		const $timer = $('#timer');
-		const $score = $('#score');
-		$timer.text(`TIMER: ${this.time}s`)
-		// $score.text(`SCORE: ${Math.floor(this.score)}`)
-	},
-
-
-	startCanvas() {
-		ctx.clearRect(0, 0, canvas.width, canvas.height)
-		animate();
-	},
-		
-
-	gameWon() {
-		console.log('Game Won!');
-		const modal = document.getElementById("myModalWin");
-		// const span = document.getElementsByClassName("close")[0];
-		modal.style.display = "block";
-	},
-
-	gameOver() {
-		const modal = document.getElementById("myModalLose");
-		const span = document.getElementsByClassName("close")[0];
-		modal.style.display = "block";
-	}
-}
-
-
-
-
-
 const canvas = document.getElementById('my-canvas');
 const ctx = canvas.getContext('2d');
 
@@ -82,7 +13,7 @@ const skateboard = {
 	height: 70,
 	width: 25,
 	color: "black",
-	speed: 2,
+	speed: 3,
 
 	direction: {
 		up: false,
@@ -158,14 +89,16 @@ const obstacleCar = {
 	width: 50,
 	height: 100,
 	color: "red",
-	speed: 1,
+	speed: 10,
 	draw() {
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
 	    ctx.rect(this.x, this.y, this.width, this.height);
-	    ctx.fill();
+	    ctx.fill();   
+	    
 	},
 	move() {
+
 		this.y += this.speed;
     	if(this.y === 1000){
     		this.y = 0
@@ -180,7 +113,7 @@ const obstacleDog = {
 	width: 50,
 	height: 50,
 	color: "black",
-	speed: 2,
+	speed: 8,
 	draw() {
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
@@ -188,6 +121,7 @@ const obstacleDog = {
 	    ctx.fill();
 	},
 	move() {
+
 		this.y += this.speed;
     	if(this.y === 1000){
     		this.y = 0
@@ -202,10 +136,10 @@ const streetLane = {
 	width: 20,
 	height: 100,
 	color: "white",
-	speed: 25,
+	speed: 10,
 
 	draw() {
-		for(let i = 0; i <= canvas.height; i += 20){
+		for(let i = 0; i <= canvas.height; i += 50){
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
 	    ctx.rect(this.x, this.y, this.width, this.height);
@@ -214,7 +148,7 @@ const streetLane = {
 	},
 	move() {
 
-		this.y += this.speed;
+		this.y += (this.speed * 5);
     	if(this.y === 1000){
     		this.y = 0
     		this.x = 155;
@@ -245,11 +179,11 @@ function animate() {
 	skateboard.draw();
 	
 	if(skateboard.checkCollision(obstacleCar)){
-		hillBomber.gameOver();
+		gameOver();
 		return;
 	} 
 	if(skateboard.checkCollision(obstacleDog)){
-		hillBomber.gameOver();
+		gameOver();
 		return;
 	}
 	else {
@@ -257,55 +191,4 @@ function animate() {
 		requestID = window.requestAnimationFrame(animate)
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Listeners
-
-// start game
-$('#startButton').on('click', () => {
-	// hide the start section
-	$('.startSection').hide();
-	// invoke the start timer function
-	hillBomber.gameStart();
-	// everything that isnt in the startSection section, should
-	// be hidden until the start button has been clicked
-	// and show the actual game play	
-})
-
-document.addEventListener('keyup', (e) => {
-	// for skateboard
-	if(["w", "a", "s", "d"].includes(e.key)){
-		skateboard.unsetDirection(e.key)
-	}
-});
-
-document.addEventListener('keydown', (e) => {
-	skateboard.setDirection(e.key)
-	
-});
-
-
-
-
-
-
-
-
-
-
+animate();
