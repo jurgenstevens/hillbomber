@@ -7,6 +7,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+	<!-- The Images -->
+	<img id="theSkateboard" class="hidden" src="hillbomberimages/skateboard01.png">
+	<img id="obstacleCar" class="hidden" src="hillbomberimages/hillbomber-car.png">
+	<img id="obstacleDog" class="hidden" src="hillbomberimages/hillbomber-dog.png">
+	<img id="obstaclePotHole" class="hidden" src="hillbomberimages/pothole.png">
+
+
 			<!-- START BUTTON -->
 		<div id="startModal" class="start-modal">
 			<h1 id="startLogo">HillBomber</h1>
@@ -16,7 +23,9 @@
 				Press the "w" key to move up.<br>
 				The "s" to move down. The "a"<br>
 				to move left and "d" key to <br>
-				move right.
+				move right.<br>
+<!-- 				<br>
+				If you win or lose, click the "X" -->
 			</h5>
 		</div>
 
@@ -56,7 +65,7 @@
 	<div id="myModalWin" class="modalWin">
 		<div class="modal-content">
 			<div id="gameWon">You Win!</div>
-		    <span class="close">&times;</span>
+		    <span class="closeWin"></span>
   		</div>
   	</div>
 
@@ -64,7 +73,7 @@
 	<div id="myModalLose" class="modalLose">
 		<div class="modal-content">
 			<div id="gameOver">Game Over</div>
-		    <span class="close">&times;</span>
+		    <span class="closeLose"></span>
   		</div>
   	</div>
   	<script type="text/javascript" src="js/canvas.js"></script>

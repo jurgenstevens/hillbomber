@@ -26,7 +26,7 @@ const hillBomber = {
 	startTimer() {
 		const intervalId = setInterval(() => {
 			this.time++
-			this.score += .9;
+			this.score += .4;
 			this.printStats();
 			if (this.score >= 10){
 				clearInterval(intervalId);
@@ -51,7 +51,7 @@ const hillBomber = {
 		}, 1000);
 	},
 
-
+	// shows the timer and score on the game
 	printStats() {
 		const $timer = $('#timer');
 		const $score = $('#score');
@@ -59,13 +59,11 @@ const hillBomber = {
 		$score.text(`SCORE: ${Math.floor(this.score)}`)
 	},
 
-
 	startCanvas() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height)
 		animate();
 	},
 		
-
 	gameWon() {
 		const modal = document.getElementById("myModalWin");
 		const span = document.getElementsByClassName("close")[0];
@@ -89,15 +87,16 @@ function clearCanvas() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
+const img = document.getElementById("theSkateboard");
 
 // SKATEBOARD WITHIN THE CANVAS
 const skateboard = {
 	x: 175,
 	y: 800,
-	height: 70,
-	width: 25,
+	height: 80,
+	width: 35,
 	color: "black",
-	speed: 5,
+	speed: 4,
 
 	direction: {
 		up: false,
@@ -107,10 +106,7 @@ const skateboard = {
 	},
 
 	draw() {
-		ctx.beginPath()
-		ctx.rect(this.x, this.y, this.width, this.height)
-		ctx.fillStyle = this.color;
-		ctx.fill();	
+ 		ctx.drawImage(img, this.x, this.y, this.width, this.height);
 	},
 
 	setDirection(key) {
@@ -308,7 +304,7 @@ function animate() {
 // starts the game
 $('#startButton').on('click', () => {
 	// hide the start section
-	$('.startSection').hide();
+	$('.start-modal').hide();
 	// invoke the start timer function
 	hillBomber.gameStart();
 	// everything that isnt in the startSection section, should
@@ -326,7 +322,6 @@ document.addEventListener('keyup', (e) => {
 document.addEventListener('keydown', (e) => {
 	skateboard.setDirection(e.key)
 });
-
 
 
 
