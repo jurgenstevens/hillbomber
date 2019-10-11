@@ -98,7 +98,7 @@ const potHoleImg = document.getElementById("obstaclePotHole");
 const skateboard = {
 	x: 175,
 	y: 800,
-	height: 80,
+	height: 85,
 	width: 35,
 	color: "black",
 	speed: 4,
@@ -200,7 +200,7 @@ const obstacleCar = {
 
 // DOG WITHIN THE CANVAS
 const obstacleDog = {
-	x: (Math.random() * 300),
+	x: (Math.random() * 350),
 	y: 0,
 	width: 60,
 	height: 60,
