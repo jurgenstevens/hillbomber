@@ -200,7 +200,7 @@ const obstacleCar = {
 
 // DOG WITHIN THE CANVAS
 const obstacleDog = {
-	x: (Math.random() * 350),
+	x: (Math.random() * 325),
 	y: 0,
 	width: 60,
 	height: 60,
