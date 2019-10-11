@@ -1,21 +1,17 @@
 # hillbomber
 
-1) This game will be designed as a bird's eye view game. Create a simple loop with San Francisco houses image by restarting at the end of every intersection and mirror them to each side of the road.
+1) This game will be designed as a bird's eye view game. With a simple canvas of a San Francisco street and an San Francisco row houses to both sides.
   
-2) Player must dodge obstacles: cars, dogs and pedestrians.
+2) In this game, the player must dodge the following obstacles: cars, dogs and pot holes.
 
-3) Player's speed will increae little by little. If they go any higher than x speed, they will get speed wobble and fall (lose).
+3) Player must dodge the obstacles or they will wipe out and the game will be over.
 
-4) The score will increase by 1 for every intersection the pass.
+4) The score will increase as time progresses.
 
-5) The user can slow down by powersliding.
+5) The game will require the following buttons to move the skateboard:
+	"w" for up, "a" for left, "s" for down, and "d" for right.
 
-6) The game will only have the following buttons: Left, Right, and Powerslide.
-
-7) If the player wipes out, switch to a gif of a hillbomb wipeout and float the words "Game Over" across the screen in big red letters.
-
-8) If the player reaches the 20th intersection, switch to a gif of a hillbomb make and float the words "You Win" across the screen in gold letters.
-
+6) Once the score reaches 10, the player wins.
 
  The HillBomber Wireframe
 ![image1](https://user-images.githubusercontent.com/48702365/66228726-c9bb5300-e6a5-11e9-859d-54ee72c1a74c.jpeg)
