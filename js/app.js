@@ -87,7 +87,12 @@ function clearCanvas() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
-const img = document.getElementById("theSkateboard");
+const skateboardImg = document.getElementById("theSkateboard");
+const carImg = document.getElementById("obstacleCar");
+const dogImg = document.getElementById("obstacleDog");
+const potHoleImg = document.getElementById("obstaclePotHole");
+
+
 
 // SKATEBOARD WITHIN THE CANVAS
 const skateboard = {
@@ -106,7 +111,11 @@ const skateboard = {
 	},
 
 	draw() {
- 		ctx.drawImage(img, this.x, this.y, this.width, this.height);
+		ctx.drawImage(skateboardImg, this.x, this.y, this.width, this.height);
+		// ctx.beginPath()
+		// ctx.rect(this.x, this.y, this.width, this.height)
+		// ctx.fillStyle = this.color;
+		// ctx.fill();	
 	},
 
 	setDirection(key) {
@@ -169,15 +178,16 @@ const skateboard = {
 const obstacleCar = {
 	x: (Math.random() * 250),
 	y: 0,
-	width: 60,
-	height: 120,
+	width: 70,
+	height: 140,
 	color: "red",
 	speed: 10,
 	draw() {
-		ctx.beginPath();
-		ctx.fillStyle = this.color;
-	    ctx.rect(this.x, this.y, this.width, this.height);
-	    ctx.fill();
+		ctx.drawImage(carImg, this.x, this.y, this.width, this.height);
+		// ctx.beginPath();
+		// ctx.fillStyle = this.color;
+		// ctx.rect(this.x, this.y, this.width, this.height);
+		// ctx.fill();
 	},
 	move() {
 		this.y += this.speed;
@@ -197,10 +207,11 @@ const obstacleDog = {
 	color: "black",
 	speed: 5,
 	draw() {
-		ctx.beginPath();
-		ctx.fillStyle = this.color;
-	    ctx.rect(this.x, this.y, this.width, this.height);
-	    ctx.fill();
+		ctx.drawImage(dogImg, this.x, this.y, this.width, this.height);
+		// ctx.beginPath();
+		// ctx.fillStyle = this.color;
+		// ctx.rect(this.x, this.y, this.width, this.height);
+		// ctx.fill();
 	},
 	move() {
 		this.y += this.speed;
@@ -220,10 +231,11 @@ const obstaclePotHole = {
 	color: "brown",
 	speed: 5,
 	draw() {
-		ctx.beginPath();
-		ctx.fillStyle = this.color;
-	    ctx.rect(this.x, this.y, this.width, this.height);
-	    ctx.fill();
+		ctx.drawImage(potHoleImg, this.x, this.y, this.width, this.height);
+		// ctx.beginPath();
+		// ctx.fillStyle = this.color;
+		// ctx.rect(this.x, this.y, this.width, this.height);
+		// ctx.fill();
 	},
 	move() {
 		this.y += this.speed;
