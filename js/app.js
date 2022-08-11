@@ -20,7 +20,8 @@ const hillBomber = {
 
 		this.startTimer();
 		this.startCanvas();
-	},
+},
+
 
 	// starts the timer and also allows the score to go up in adjustable increments
 	startTimer() {

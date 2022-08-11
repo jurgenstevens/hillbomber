@@ -7,24 +7,19 @@ canvas {
 	background-color: gray;
 	position: absolute;
 	left: 540px;
-	top: 200px;
 }
 
 #startModal { 
-	position: fixed;
+	position: absolute;
 	z-index: 1; 
-	left: 0;
-	top: 0;
+	top: 20px;
 	width: 100%;
-	height: 100%; 
-/*	background-image: url(http://24.media.tumblr.com/36e544b3c915e015d98aa6e207716623/tumblr_n4wnen0SpZ1sgg3dvo1_500.gif);*/
-/*	background-repeat: no-repeat;
-	background-position: center;*/
 	font-family: 'Press Start 2P', cursive;
 }
 #startLogo {
 	text-align: center;
-	margin-top: 60px;
+	margin-top: 60vh;
+	margin-left: 1vw;
 	font-family: 'Press Start 2P', cursive;
 	color: gold;
 	font-size: 60px;
@@ -33,10 +28,8 @@ canvas {
 }
 
 #startButton {
-	position: absolute;
-	text-align: center;
-	margin-top: 190px;
-	margin-left: 590px;
+	margin-top: 0px;
+	margin-left: 40vw;
 	font-family: 'Press Start 2P', cursive;
 	font-size: 50px;
 	font-weight: bold;
@@ -45,6 +38,7 @@ canvas {
 	background-color: Transparent;
 	border: none;
 	cursor: pointer;
+	text-align: center;
 	-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: gold;
 }
@@ -52,29 +46,27 @@ canvas {
 #instructions {
 	font-size: 12px;
 	text-align: center;
-	margin-top: 0px;
+	/* margin-top: 0px;
+	margin-left: 0; */
 	font-family: 'Press Start 2P', cursive;
 	color: red;
 	font-size: 20px;
-/*	-webkit-text-stroke-width: 1px;*/
-/*	-webkit-text-stroke-color: brown;*/
 }
 
 #streetew {
 	background-color: gray;
 	position: absolute;
-	width: 1420px;
-	height: 200px;
-	top: 200px;
+	width: 100%;
+	height: 100px;
 }
 #houseseast {
 	position: absolute;
-	top: 440px;
+	top: 140px;
 	left: 290px;
 }
 #houseswest {
 	position: absolute;
-	top: 440px;
+	top: 140px;
 	left: 930px;
 }
 
@@ -87,14 +79,16 @@ canvas {
 }
 #timer {
 	position: fixed;
-	top: 60px;
+	top: 110px;
+	/* right: 10px; */
 	font-family: 'Press Start 2P', cursive;
 	color: black;
 	font-size: 25px;
 }
 #score {
 	position: fixed;
-	top: 155px;
+	top: 205px;
+	/* right: 10px; */
 	font-family: 'Press Start 2P', cursive;
 	color: black;
 	font-size: 25px;
@@ -174,6 +168,12 @@ canvas {
   font-family: 'Press Start 2P', cursive;
   color: gold;
   font-size: 90px;
+}
+
+.sF{
+	position: absolute;
+	width: 100%;
+	height: 100%; 
 }
 
 /* The Close Button */
