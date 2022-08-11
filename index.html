@@ -17,27 +17,28 @@
 			<!-- START BUTTON -->
 		<div id="startModal" class="start-modal">
 			<h1 id="startLogo">HillBomber</h1>
-			<h5 id="instructions">Game Instructions:<br>
-				Scroll to the very bottom<br>
-				Avoid the oncoming objects. To do so, <br>
-				Press the "w" key to move up.<br>
-				The "s" to move down. The "a"<br>
-				to move left and "d" key to <br>
-				move right.<br>
-				<!-- 				<br>
-					If you win or lose, click the "X" -->
+			<h5 id="instructions">
+				Game Instructions:<br>
+				Scroll to the very <br/>
+				bottom. Avoid the <br/>
+				oncoming objects. <br/>
+				To do so, Press the <br/>
+				"w" key to move up. <br/>
+				The "s" to move down. <br/>
+				The "a"	to move left <br/> 
+				and "d" key to move right.<br>
 			</h5>
-			<button id="startButton">Start</button>
+			<button id="startButton"><h4>Start</h4></button>
 		</div>
 
 	<!-- Contains everything within the game -->
 	<div class="sF">
 		<!-- This will be made up of four different divs: Street, lanes, sidewalks and houses -->
 
+		<!-- <div id="streetew"></div> -->
 		<div id="streetns">
 			<canvas id="my-canvas" width="350" height="1000"></canvas>
 		</div>
-		<div id="streetew"></div>
 		<div id="lanes"></div>
 		<div id="sidewalks"></div>
 		<img id="houseseast" src="hillbomberimages/sfhouses1.png">
@@ -45,23 +46,11 @@
 		<div class="controls">
 			<h3 id="timer"></h3>
 			<h3 id="score"></h3>
-<!-- 		<h3 id="speed">:Speed</h3>
-			<h3 id="wobble">:Speed Wobble</h3> -->
-<!-- 	<div class="buttons">
-			<button id="left">LEFT</button>
-			<button id="right">RIGHT</button>
-			<button id="powerslide">POWERSLIDE</button>
-		</div> -->
-		<!-- Make the skateboarder's skateboards first, then arms and head -->
 		</div>
+		<div class="footer">Hillbomber 2022 &#9400;</div>
 	</div>
-<!-- 	<progress class="speed" value="0" max="100">
-		</progress>
-		<progress class="wobble" value="50" max="100">
-		</progress> -->
 
-
-				<!--  GAME WON MODAL -->
+	<!--  GAME WON MODAL -->
 
 	<div id="myModalWin" class="modalWin">
 		<div class="modal-content">
@@ -70,7 +59,7 @@
   		</div>
   	</div>
 
-				<!-- GAME OVER MODAL -->
+	<!-- GAME OVER MODAL -->
 	<div id="myModalLose" class="modalLose">
 		<div class="modal-content">
 			<div id="gameOver">Game Over</div>
@@ -79,6 +68,5 @@
   	</div>
   	<script type="text/javascript" src="js/canvas.js"></script>
 	<script src="js/app.js"></script>
-	<footer class="footer">HillBomber 2019 &#9400;</footer>
 </body>
 </html>

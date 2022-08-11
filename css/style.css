@@ -2,23 +2,18 @@ body {
 	background-color: white;
 	color: black;
 }
-canvas {
-	border: 1px solid black;
-	background-color: gray;
-	position: absolute;
-	left: 540px;
-}
 
 #startModal { 
-	position: absolute;
+	position: fixed;
 	z-index: 1; 
-	top: 20px;
+	top: center;
+	margin-top: auto;
+	margin-left: 540px;
 	width: 100%;
 	font-family: 'Press Start 2P', cursive;
 }
 #startLogo {
 	text-align: center;
-	margin-top: 60vh;
 	margin-left: 1vw;
 	font-family: 'Press Start 2P', cursive;
 	color: gold;
@@ -29,7 +24,7 @@ canvas {
 
 #startButton {
 	margin-top: 0px;
-	margin-left: 40vw;
+	margin-left: 43%;
 	font-family: 'Press Start 2P', cursive;
 	font-size: 50px;
 	font-weight: bold;
@@ -52,21 +47,27 @@ canvas {
 	color: red;
 	font-size: 20px;
 }
+canvas {
+	border: 1px solid black;
+	background-color: gray;
+	position: absolute;
+	left: 540px;
+}
 
-#streetew {
+/* #streetew {
 	background-color: gray;
 	position: absolute;
 	width: 100%;
 	height: 100px;
-}
+} */
 #houseseast {
 	position: absolute;
-	top: 140px;
+	top: 20px;
 	left: 290px;
 }
 #houseswest {
 	position: absolute;
-	top: 140px;
+	top: 20px;
 	left: 930px;
 }
 
@@ -156,12 +157,6 @@ canvas {
   font-family: 'Press Start 2P', cursive;
   color: gold;
   font-size: 90px;
-}
-
-.sF{
-	position: absolute;
-	width: 100%;
-	height: 100%; 
 }
 
 /* The Close Button */
