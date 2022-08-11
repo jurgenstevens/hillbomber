@@ -13,5 +13,5 @@
 
 6) Once the score reaches 10, the player wins.
 
- The HillBomber Wireframe
+# Wireframe
 ![image1](https://user-images.githubusercontent.com/48702365/66228726-c9bb5300-e6a5-11e9-859d-54ee72c1a74c.jpeg)
