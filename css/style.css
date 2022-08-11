@@ -80,7 +80,7 @@ canvas {
 #timer {
 	position: fixed;
 	top: 110px;
-	/* right: 10px; */
+	right: 5vw;
 	font-family: 'Press Start 2P', cursive;
 	color: black;
 	font-size: 25px;
@@ -88,7 +88,7 @@ canvas {
 #score {
 	position: fixed;
 	top: 205px;
-	/* right: 10px; */
+	right: 5vw;
 	font-family: 'Press Start 2P', cursive;
 	color: black;
 	font-size: 25px;
@@ -122,18 +122,6 @@ canvas {
 	position: fixed;
 	right: 10px;
 	top: 85px;
-}
-
-.speed {
-	position: fixed;
-	right: 80px;
-	top: 70px;
-}
-
-.wobble {
-	position: fixed;
-	right: 150px;
-	top: 105px;
 }
 
 .modalLose {
