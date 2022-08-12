@@ -6,15 +6,15 @@ body {
 #startModal { 
 	position: fixed;
 	z-index: 1; 
-	top: center;
+	/* top: center; */
 	margin-top: auto;
-	margin-left: 540px;
-	width: 100%;
+	margin-left: 50vh;
+	text-align: center;
+	/* width: 100%; */
 	font-family: 'Press Start 2P', cursive;
 }
 #startLogo {
-	text-align: center;
-	margin-left: 1vw;
+	margin: center;
 	font-family: 'Press Start 2P', cursive;
 	color: gold;
 	font-size: 60px;
@@ -24,7 +24,8 @@ body {
 
 #startButton {
 	margin-top: 0px;
-	margin-left: 43%;
+	margin: auto;
+	/* margin-left: 43%; */
 	font-family: 'Press Start 2P', cursive;
 	font-size: 50px;
 	font-weight: bold;
@@ -41,8 +42,9 @@ body {
 #instructions {
 	font-size: 12px;
 	text-align: center;
-	/* margin-top: 0px;
-	margin-left: 0; */
+	margin-top: 0px;
+	margin: auto;
+	/* margin-left: 20vh; */
 	font-family: 'Press Start 2P', cursive;
 	color: red;
 	font-size: 20px;
