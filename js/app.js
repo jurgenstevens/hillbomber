@@ -1,13 +1,8 @@
 console.log('This is Hillbomber');
-
-
 // show the start button page
 // meanwhile the actual game is hidden
 
 // START BUTTON
-
-
-
 const hillBomber = {
 
 	time: 0,
@@ -233,10 +228,6 @@ const obstaclePotHole = {
 	speed: 5,
 	draw() {
 		ctx.drawImage(potHoleImg, this.x, this.y, this.width, this.height);
-		// ctx.beginPath();
-		// ctx.fillStyle = this.color;
-		// ctx.rect(this.x, this.y, this.width, this.height);
-		// ctx.fill();
 	},
 	move() {
 		this.y += this.speed;

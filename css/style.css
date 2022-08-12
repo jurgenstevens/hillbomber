@@ -54,6 +54,8 @@ canvas {
 	background-color: gray;
 	position: absolute;
 	left: 540px;
+	width: 350px;
+	height: 100%;
 }
 
 /* #streetew {
@@ -197,5 +199,5 @@ canvas {
 .footer {
 	position: absolute;
 	right: 20px;
-	bottom: -510px;
+	bottom: 0;
 }
