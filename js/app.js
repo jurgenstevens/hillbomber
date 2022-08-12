@@ -1,4 +1,6 @@
 console.log('This is Hillbomber');
+
+
 // show the start button page
 // meanwhile the actual game is hidden
 
@@ -228,6 +230,10 @@ const obstaclePotHole = {
 	speed: 5,
 	draw() {
 		ctx.drawImage(potHoleImg, this.x, this.y, this.width, this.height);
+		// ctx.beginPath();
+		// ctx.fillStyle = this.color;
+		// ctx.rect(this.x, this.y, this.width, this.height);
+		// ctx.fill();
 	},
 	move() {
 		this.y += this.speed;
@@ -316,6 +322,29 @@ $('#startButton').on('click', () => {
 	// and show the actual game play	
 })
 
+// start new game after winning
+$('#newGame').on('click', () => {
+	console.log("New game button being hit!")
+	// hide the start section
+	$('.modalWin').hide();
+	// invoke the start timer function
+	hillBomber.gameStart();
+	// everything that isnt in the startSection section, should
+	// be hidden until the start button has been clicked
+	// and show the actual game play	
+})
+
+$('#tryAgain').on('click', () => {
+	console.log("Try Again button being hit!")
+	// hide the start section
+	$('.modalLose').hide();
+	// invoke the start timer function
+	hillBomber.gameStart();
+	// everything that isnt in the startSection section, should
+	// be hidden until the start button has been clicked
+	// and show the actual game play	
+})
+
 // allows the w, a, s, d keys to be the way to move the skateboarder
 document.addEventListener('keyup', (e) => {
 	// for skateboard
@@ -327,6 +356,7 @@ document.addEventListener('keydown', (e) => {
 	skateboard.setDirection(e.key)
 });
 
+// ICEBOX FEATURE: ADD EVENT LISTENER FOR MOBILE
 
 
 

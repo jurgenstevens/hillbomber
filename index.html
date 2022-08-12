@@ -30,7 +30,7 @@
 				right. Reach a score <br>
 				of 10 to win!<br>
 			</h5>
-			<button id="startButton"><h4>Start</h4></button>
+			<button class="button" id="startButton"><h4>Start</h4></button>
 		</div>
 
 	<!-- Contains everything within the game -->
@@ -56,16 +56,16 @@
 
 	<div id="myModalWin" class="modalWin">
 		<div class="modal-content">
-			<div id="gameWon">You Win!</div>
-		    <span class="closeWin"></span>
+			<div id="gameWon">You Win!</div><br/>
+		    <button class="button" id="newGame"><h4>New Game</h4></button>
   		</div>
   	</div>
 
 	<!-- GAME OVER MODAL -->
 	<div id="myModalLose" class="modalLose">
 		<div class="modal-content">
-			<div id="gameOver">Game Over</div>
-		    <span class="closeLose"></span>
+			<div id="gameOver">Game Over</div><br/>
+		    <button class="button" id="tryAgain"><h4>Try Again</h4></button>
   		</div>
   	</div>
   	<script type="text/javascript" src="js/canvas.js"></script>

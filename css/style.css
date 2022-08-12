@@ -39,6 +39,23 @@ body {
 	-webkit-text-stroke-color: gold;
 }
 
+.button {
+	margin-top: 0px;
+	margin: auto;
+	/* margin-left: 43%; */
+	font-family: 'Press Start 2P', cursive;
+	font-size: 50px;
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
+	background-color: Transparent;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: gold;
+}
+
 #instructions {
 	font-size: 12px;
 	text-align: center;
