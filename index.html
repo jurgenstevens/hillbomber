@@ -14,43 +14,42 @@
 	<img id="obstaclePotHole" class="hidden" src="hillbomberimages/pothole.png">
 
 
-			<!-- START BUTTON -->
-		<div id="startModal" class="start-modal">
-			<h1 id="startLogo">HillBomber</h1>
-			<h5 id="instructions">
-				Game Instructions:<br>
-				Scroll to the very <br/>
-				bottom. Avoid the <br/>
-				oncoming objects. <br/>
-				To do so, Press the <br/>
-				"w" key to move up. <br/>
-				The "s" to move down. <br/>
-				The "a"	to move left <br/> 
-				and "d" key to move <br>
-				right. Reach a score <br>
-				of 10 to win!<br>
-			</h5>
-			<button class="button" id="startButton"><h4>Start</h4></button>
-		</div>
+		<!-- START BUTTON -->
+	<div id="startModal" class="start-modal">
+		<h1 id="startLogo">HillBomber</h1>
+		<h5 id="instructions">
+			Game Instructions:<br>
+			Scroll to the very <br/>
+			bottom. Avoid the <br/>
+			oncoming objects. <br/>
+			To do so, Press the <br/>
+			"w" key to move up. <br/>
+			The "s" to move down. <br/>
+			The "a"	to move left <br/> 
+			and "d" key to move <br>
+			right. Reach a score <br>
+			of 10 to win!<br>
+		</h5>
+		<button class="button" id="startButton"><h4>Start</h4></button>
+	</div>
 
 	<!-- Contains everything within the game -->
-	<div class="sF">
+	<div id="streetew"></div>
+	<div class="san-francisco">
 		<!-- This will be made up of four different divs: Street, lanes, sidewalks and houses -->
-
-		<!-- <div id="streetew"></div> -->
+		<img id="houseseast" src="hillbomberimages/sfhouses1.png">
 		<div id="streetns">
-			<canvas id="my-canvas" height="1000"></canvas>
+			<canvas id="my-canvas"></canvas>
 		</div>
 		<div id="lanes"></div>
 		<div id="sidewalks"></div>
-		<img id="houseseast" src="hillbomberimages/sfhouses1.png">
 		<img id="houseswest" src="hillbomberimages/sfhouses2.png">
+		<div class="footer">Hillbomber 2022 &#9400;</div>
+	</div>
 		<div class="controls">
 			<h3 id="timer"></h3>
 			<h3 id="score"></h3>
-		</div>
 	</div>
-	<div class="footer">Hillbomber 2022 &#9400;</div>
 
 	<!--  GAME WON MODAL -->
 

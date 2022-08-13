@@ -326,7 +326,11 @@ $('#startButton').on('click', () => {
 $('#newGame').on('click', () => {
 	console.log("New game button being hit!")
 	// hide the start section
-	$('.modalWin').hide();
+	$('.modalWin').display = none;
+	$('.modal-content').hide()
+	hillBomber.time = 0;
+	hillBomber.score = 0;
+
 	// invoke the start timer function
 	hillBomber.gameStart();
 	// everything that isnt in the startSection section, should

@@ -1,16 +1,16 @@
 body {
+	display: flex;
+	justify-content: center;
 	background-color: white;
 	color: black;
 }
 
 #startModal { 
+	display: flex;
+	flex-direction: column;
 	position: fixed;
 	z-index: 1; 
-	/* top: center; */
-	margin-top: auto;
-	margin-left: 50vh;
 	text-align: center;
-	/* width: 100%; */
 	font-family: 'Press Start 2P', cursive;
 }
 #startLogo {
@@ -69,27 +69,39 @@ body {
 canvas {
 	border: 1px solid black;
 	background-color: gray;
-	position: absolute;
-	left: 540px;
+	display: block;
 	width: 350px;
 	height: 100%;
 }
 
-/* #streetew {
+#streetew {
 	background-color: gray;
 	position: absolute;
 	width: 100%;
-	height: 100px;
-} */
+	height: 10px;
+}
 #houseseast {
-	position: absolute;
+	display: block;
+	margin-left: auto;
+	/* margin-right: auto; */
 	top: 20px;
 	left: 290px;
 }
 #houseswest {
-	position: absolute;
+	display: flex;
+	/* margin-left: auto; */
+	margin-right: auto;
 	top: 20px;
 	left: 930px;
+}
+
+.footer{
+	display: flex;
+}
+
+.san-francisco {
+	display: flex;
+	flex-direction: row;
 }
 
 /*Buttons are within controls div*/
