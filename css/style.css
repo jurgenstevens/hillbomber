@@ -68,7 +68,7 @@ body {
 canvas {
 	border: 1px solid black;
 	background-color: gray;
-	display: block;
+	margin-top: 5px;
 	width: 350px;
 	height: 100%;
 }
@@ -82,15 +82,15 @@ canvas {
 #houseseast {
 	display: block;
 	margin-left: auto;
-	/* margin-right: auto; */
+	margin-top: 25px;
 	top: 20px;
 	left: 290px;
 }
 #houseswest {
 	display: flex;
-	/* margin-left: auto; */
 	margin-right: auto;
-	top: 20px;
+	margin-top: 25px;
+	top: 25px;
 	left: 930px;
 }
 
@@ -211,6 +211,11 @@ canvas {
 	margin-top: 60px;
 	-webkit-text-stroke-width: 3px;
 	-webkit-text-stroke-color: brown;
+}
+
+.modal-content {
+	display: flex;
+	flex-direction: column;
 }
 
 #gameWon {
