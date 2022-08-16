@@ -66,12 +66,14 @@ const hillBomber = {
 		const modal = document.getElementById("myModalWin");
 		const span = document.getElementsByClassName("close")[0];
 		modal.style.display = "block";
+		ctx.clearRect(0, 0, canvas.width, canvas.height)
 	},
 
 	gameOver() {
 		const modal = document.getElementById("myModalLose");
 		const span = document.getElementsByClassName("close")[0];
 		modal.style.display = "block";
+		ctx.clearRect(0, 0, canvas.width, canvas.height)
 	}
 };
 
@@ -326,13 +328,13 @@ $('#startButton').on('click', () => {
 $('#newGame').on('click', () => {
 	console.log("New game button being hit!")
 	// hide the start section
-	$('.modalWin').display = none;
-	$('.modal-content').hide()
+	$('.modalWin').hide()
+	modal.style.display = "none";
 	hillBomber.time = 0;
 	hillBomber.score = 0;
 
 	// invoke the start timer function
-	hillBomber.gameStart();
+	// hillBomber.gameStart();
 	// everything that isnt in the startSection section, should
 	// be hidden until the start button has been clicked
 	// and show the actual game play	
@@ -342,6 +344,9 @@ $('#tryAgain').on('click', () => {
 	console.log("Try Again button being hit!")
 	// hide the start section
 	$('.modalLose').hide();
+	modal.style.display = "none";
+	hillBomber.time = 0;
+	hillBomber.score = 0;
 	// invoke the start timer function
 	hillBomber.gameStart();
 	// everything that isnt in the startSection section, should
