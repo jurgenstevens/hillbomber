@@ -70,7 +70,8 @@ canvas {
 	background-color: gray;
 	margin-top: 5px;
 	width: 350px;
-	height: 90%;
+	height: 825;
+	max-height: 90%;
 }
 
 #streetew {
@@ -236,3 +237,21 @@ canvas {
 	right: 20px;
 	bottom: 0;
 }
+
+@media screen and (max-height: 770px) {
+	body {
+		color: aqua;
+		display: flex;
+		align-items: stretch;
+	}
+	.san-francisco {
+	  max-height: 100%;
+	  width: 40vw;
+	  height: 90vh;
+	  display: flex;
+	  align-items: stretch;
+	}
+	#startLogo {
+		font-size: 50px;
+	}
+  }

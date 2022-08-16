@@ -1,15 +1,11 @@
 console.log('This is Hillbomber');
-
-
 // show the start button page
 // meanwhile the actual game is hidden
 
 // START BUTTON
 const hillBomber = {
-
 	time: 0,
 	score: 0,
-
 	// START BUTTON
 	gameStart(){
 		const modal = document.getElementById("startModal");
@@ -18,7 +14,6 @@ const hillBomber = {
 		this.startTimer();
 		this.startCanvas();
 },
-
 
 	// starts the timer and also allows the score to go up in adjustable increments
 	startTimer() {
@@ -56,19 +51,16 @@ const hillBomber = {
 		$timer.text(`TIMER: ${this.time}s`)
 		$score.text(`SCORE: ${Math.floor(this.score)}`)
 	},
-
 	startCanvas() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height)
 		animate();
-	},
-		
+	},	
 	gameWon() {
 		const modal = document.getElementById("myModalWin");
 		const span = document.getElementsByClassName("close")[0];
 		modal.style.display = "block";
 		ctx.clearRect(0, 0, canvas.width, canvas.height)
 	},
-
 	gameOver() {
 		const modal = document.getElementById("myModalLose");
 		const span = document.getElementsByClassName("close")[0];
@@ -76,7 +68,6 @@ const hillBomber = {
 		ctx.clearRect(0, 0, canvas.width, canvas.height)
 	}
 };
-
 
 // THE ACTUAL CANVAS
 const canvas = document.getElementById('my-canvas');
