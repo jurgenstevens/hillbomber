@@ -326,35 +326,11 @@ $('#startButton').on('click', () => {
 
 // start new game after winning
 $('#newGame').on('click', () => {
-	console.log("New game button being hit!")
-	// hide the start section
-	$('.modalWin').hide()
-	let modal = document.getElementById('myModalWin')
-	modal.style.display = "none";
-	hillBomber.time = 0;
-	hillBomber.score = 0;
-
-	// invoke the start timer function
-	// hillBomber.gameStart();
-	// everything that isnt in the startSection section, should
-	// be hidden until the start button has been clicked
-	// and show the actual game play	
+	window.location.reload()
 })
 
 $('#tryAgain').on('click', () => {
-	console.log("Try Again button being hit!")
-	// hide the start section
-	// $('.modalLose').hide();
-	let loseModal = document.getElementById('myModalLose')
-	loseModal.style.display = "none";
-	hillBomber.time = 0;
-	hillBomber.score = 0;
-	// invoke the start timer function
-	// hillBomber.gameStart();
-	// ctx.clearRect(0, 0, canvas.width, canvas.height)
-	// everything that isnt in the startSection section, should
-	// be hidden until the start button has been clicked
-	// and show the actual game play	
+	window.location.reload()
 })
 
 // allows the w, a, s, d keys to be the way to move the skateboarder
