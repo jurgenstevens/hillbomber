@@ -242,16 +242,11 @@ canvas {
 	body {
 		color: aqua;
 		display: flex;
-		align-items: stretch;
+		/* align-items: stretch; */
 	}
 	.san-francisco {
-	  max-height: 100%;
-	  width: 40vw;
-	  height: 90vh;
+	  height: 95vh;
 	  display: flex;
 	  align-items: stretch;
 	}
-	#startLogo {
-		font-size: 50px;
-	}
-  }
+}
