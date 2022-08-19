@@ -33,28 +33,29 @@
 	</div>
 
 	<!-- Contains everything within the game -->
-	<div id="streetew"></div>
-	<div class="san-francisco">
-		<!-- This will be made up of four different divs: Street, lanes, sidewalks and houses -->
-		<img id="houseseast" src="hillbomberimages/sfhouses1.png">
-		<div id="streetns">
+	<div class="theGame">
+		<div id="streetew"></div>
+		<div class="san-francisco">
+			<!-- This will be made up of four different divs: Street, lanes, sidewalks and houses -->
+			<img id="houseseast" src="hillbomberimages/sfhouses1.png">
+			<div id="streetns">
+			</div>
+			<canvas id="my-canvas" width="350" height="825"></canvas>
+			<div id="lanes"></div>
+			<div id="sidewalks"></div>
+			<img id="houseswest" src="hillbomberimages/sfhouses2.png">
+			<div class="footer">Hillbomber 2022 &#9400;</div>
 		</div>
-		<canvas id="my-canvas" width="350" height="825"></canvas>
-		<div id="lanes"></div>
-		<div id="sidewalks"></div>
-		<img id="houseswest" src="hillbomberimages/sfhouses2.png">
-		<div class="footer">Hillbomber 2022 &#9400;</div>
+		<div class="controls">
+			<h3 id="timer"></h3>
+			<h3 id="score"></h3>
+		</div>
 	</div>
-	<div class="controls">
-		<h3 id="timer"></h3>
-		<h3 id="score"></h3>
-	</div>
-
 	<!--  GAME WON MODAL -->
 
 	<div id="myModalWin" class="modalWin">
 		<div class="modal-content">
-			<div id="gameWon">You Win!</div><br/>
+			<div id="gameWon">You Win!</div>
 		    <button class="button" id="newGame"><h4>New Game</h4></button>
   		</div>
   	</div>
@@ -62,7 +63,7 @@
 	<!-- GAME OVER MODAL -->
 	<div id="myModalLose" class="modalLose">
 		<div class="modal-content">
-			<div id="gameOver">Game Over</div><br/>
+			<div id="gameOver">Game Over</div>
 			<button class="button" id="tryAgain"><h4>Try Again?</h4></button>
 		</div>
   	</div>

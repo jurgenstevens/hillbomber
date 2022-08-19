@@ -68,7 +68,7 @@ body {
 canvas {
 	border: 1px solid black;
 	background-color: gray;
-	margin-top: 5px;
+	margin-top: 0px;
 	width: 350px;
 	height: 825;
 	max-height: 90%;
@@ -79,6 +79,7 @@ canvas {
 	position: absolute;
 	width: 100%;
 	height: 10px;
+	top: 0;
 }
 #houseseast {
 	display: block;
@@ -240,13 +241,26 @@ canvas {
 
 @media screen and (max-height: 770px) {
 	body {
-		color: aqua;
 		display: flex;
-		/* align-items: stretch; */
+		flex-wrap: wrap;
 	}
 	.san-francisco {
 	  height: 95vh;
-	  display: flex;
 	  align-items: stretch;
+	}
+	.controls {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (max-width: 1220px) {
+	.theGame {
+		display: grid;
+		justify-content: center;
+	}
+	#timer {
+		display: flex;
+		justify-content: center;
 	}
 }
