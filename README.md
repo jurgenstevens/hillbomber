@@ -23,6 +23,15 @@ Hillbomber is a skateboarding game based in San Francisco, California where the 
 
 <br>
 
+# Technologies Use:
+- HTML Canvas
+- JavaScript
+- jQuery
+- CSS
+- Flexbox
+
+<br>
+
 # Wireframe
 ![image1](https://user-images.githubusercontent.com/48702365/66228726-c9bb5300-e6a5-11e9-859d-54ee72c1a74c.jpeg)
 
