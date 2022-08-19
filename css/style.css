@@ -268,14 +268,7 @@ canvas {
 	  align-items: stretch;
 	}
 	.controls {
-		display: flex;
-		flex-wrap: wrap;
-	}
-}
-
-@media screen and (max-width: 1275px) {
-	.controls {
-		margin-top: 10px;
+		margin-top: 5px;
 		text-align: center;
 	}
 	#timer {
@@ -293,5 +286,34 @@ canvas {
 		font-family: 'Press Start 2P', cursive;
 		color: black;
 		font-size: 25px;
+	}
+	.footer {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1275px) {
+	.controls {
+		margin-top: 5px;
+		text-align: center;
+	}
+	#timer {
+		display: inline;
+		margin-left: 15vh;
+		font-family: 'Press Start 2P', cursive;
+		color: black;
+		font-size: 25px;
+	}
+	#score {
+		display: inline;
+		margin-top: 25px;
+		border: 25px;
+		padding: 20px;
+		font-family: 'Press Start 2P', cursive;
+		color: black;
+		font-size: 25px;
+	}
+	.footer {
+		display: none;
 	}
 }
